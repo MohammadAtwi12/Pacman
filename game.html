@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+        }
+        button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 200px;
+            background-color: transparent;
+            border: 0px;
+        }
+        button a {
+            font-size: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-shadow: 5px grey;
+            color: rgb(245, 245, 245);
+            text-decoration: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <button><a href="pgame/pacman.html" id="startButton">START GAME</a></button>
+    <script>
+        const gameStartAudio = new Audio("pgame/sounds/game_start.wav");
+        const startButton = document.getElementById("startButton");
+
+        // Add a click event listener to the <a> link
+        startButton.addEventListener("click", function (event) {
+            // Prevent the default link behavior (navigating to the new page)
+            event.preventDefault();
+
+            // Play the audio
+            gameStartAudio.play();
+
+            // After the audio finishes playing, navigate to the pacman.html page
+            gameStartAudio.onended = function() {
+                window.location.href = startButton.href;
+            };
+        });
+    </script>
+</body>
+</html>

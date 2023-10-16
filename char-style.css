@@ -1,0 +1,674 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+[data-category="game"] {
+  background-color: #5db8e9;
+}
+
+[data-category="event"] {
+  background-color: #ffe300;
+}
+
+
+[data-category="merch"] {
+  background-color: #f2a4ba;
+}
+
+[data-category="others"] {
+  background-color: #e41a12;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 0.6s all;
+}
+
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+a,
+h1,
+h2,
+h3,
+p {
+  text-decoration: none;
+  font-family: "Oswald", sans-serif;
+  color: white;
+}
+
+header {
+  display: block;
+  position: relative;
+  background: #fff;
+  width: 100%;
+  height: 144px;
+  padding: 0 0 40px 0;
+  z-index: 2;
+}
+
+header h1 {
+  width: 40%;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  padding: 1% 0 0 0;
+}
+
+header h1 img {
+  scale: 0.8;
+}
+
+header #toolCol {
+  background: #000;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+  padding-bottom: 3px;
+}
+
+header #shareCol,
+header #langCol {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+header #shareCol dt,
+header #langCol dt {
+  display: block;
+  padding: 22px 20px 15px 15px;
+}
+
+header #shareCol dd img {
+  scale: 0.8;
+}
+
+header #langCol dd img {
+  scale: 0.7;
+  padding-bottom: 5px;
+}
+
+header #langCol .line img {
+  scale: 1;
+  padding-bottom: 11px;
+}
+
+header #langCol .on img:hover {
+  opacity: 0.8;
+}
+header #langCol .off img:hover {
+  opacity: 0.8;
+}
+
+header #shareCol dd img:hover {
+  opacity: 0.8;
+}
+
+.menu ul {
+  margin-top: 7px;
+  position: absolute;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  top: 50px;
+  right: 0;
+  left: inherit;
+  width: 100%;
+  transform: none;
+}
+
+.menu ul li {
+  width: 120px;
+  height: 85px;
+  opacity: 1;
+  transform: none;
+  margin: 0 0 0 1px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  overflow: hidden; /* Hide overflowing content */
+  transition: background-color 0.5s ease-in-out; /* Add smooth transition */
+}
+
+.menu ul li:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Start from the bottom */
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: red; /* Initial background color for the transition */
+  z-index: -1; /* Place below the content */
+  transition: height 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Add smooth transition */
+}
+
+.menu ul li:nth-child(1):hover::before {
+  height: 100%; /* Expand the background from bottom to top */
+  background-color: #e41a12; /* Change the background color on hover */
+}
+
+.menu ul li:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Start from the bottom */
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #f4811f; /* Initial background color for the transition */
+  z-index: -1; /* Place below the content */
+  transition: height 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Add smooth transition */
+}
+
+.menu ul li:nth-child(2):hover::before {
+  height: 100%; /* Expand the background from bottom to top */
+  background-color: #f4811f; /* Change the background color on hover */
+}
+
+.menu ul li:nth-child(3)::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Start from the bottom */
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #5db8e9; /* Initial background color for the transition */
+  z-index: -1; /* Place below the content */
+  transition: height 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Add smooth transition */
+}
+
+.menu ul li:nth-child(3):hover::before {
+  height: 100%; /* Expand the background from bottom to top */
+  background-color: #5db8e9; /* Change the background color on hover */
+}
+
+.menu ul li:nth-child(4)::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Start from the bottom */
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #f2a4ba; /* Initial background color for the transition */
+  z-index: -1; /* Place below the content */
+  transition: height 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Add smooth transition */
+}
+
+.menu ul li:nth-child(4):hover::before {
+  height: 100%; /* Expand the background from bottom to top */
+  background-color: #f2a4ba; /* Change the background color on hover */
+}
+
+.menu ul li:nth-child(5)::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Start from the bottom */
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #58b431; /* Initial background color for the transition */
+  z-index: -1; /* Place below the content */
+  transition: height 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Add smooth transition */
+}
+
+.menu ul li:nth-child(5):hover::before {
+  height: 100%; /* Expand the background from bottom to top */
+  background-color: #58b431; /* Change the background color on hover */
+}
+
+.menu ul li:nth-child(6)::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Start from the bottom */
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #ffe300; /* Initial background color for the transition */
+  z-index: -1; /* Place below the content */
+  transition: height 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Add smooth transition */
+}
+
+.menu ul li:nth-child(6):hover::before {
+  height: 100%; /* Expand the background from bottom to top */
+  background-color: #ffe300; /* Change the background color on hover */
+}
+
+.menu ul li a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 45px;
+  padding-bottom: 11px;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  position: relative; /* Add position relative for pseudo-element */
+  transition: color 0.3s ease-in-out, background 0s, padding 0.3s ease-in-out; /* Add transitions */
+}
+
+.menu ul li:nth-child(1) a {
+  border-top: 6px solid #e41a12;
+  background: url("pacman website photos/ico_home.png") no-repeat center 9px
+    #fff;
+  background-size: 25px;
+}
+
+.menu ul li:nth-child(2) a {
+  border-top: 6px solid #f4811f;
+  background: url("pacman website photos/ico_news.png") no-repeat center 9px
+    #fff;
+  background-size: 25px;
+}
+
+.menu ul li:nth-child(3) a {
+  border-top: 6px solid #5db8e9;
+  background: url("pacman website photos/ico_games.png") no-repeat center 9px
+    #fff;
+  background-size: 25px;
+}
+
+.menu ul li:nth-child(4) a {
+  border-top: 6px solid #f2a4ba;
+  background: url("pacman website photos/ico_goods.png") no-repeat center 9px
+    #fff;
+  background-size: 25px;
+}
+
+.menu ul li:nth-child(5) a {
+  border-top: 6px solid #58b431;
+  background: url("pacman website photos/ico_amusement.png") no-repeat center
+    9px #fff;
+  background-size: 25px;
+}
+
+.menu ul li:nth-child(6) a {
+  border-top: 6px solid #ffe300;
+  background: url("pacman website photos/ico_history.png") no-repeat center 9px
+    #fff;
+  background-size: 25px;
+}
+
+.menu ul li a:hover {
+  color: #fff; /* Change text color on hover */
+  background: none; /* Remove background image */
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.chrlogobg {
+  /*position: absolute;*/
+  width: 100%;
+  height: 278px;
+  background-image: url("photos2/bg_tit_pc.png"),
+    url("photos2/bg_pacman_dot.png");
+  background-position-x: 50%, 0%;
+}
+
+.chrlogobg img {
+  position: relative;
+  scale: 0.6;
+  margin-top: 100px;
+}
+
+.pacman {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 600px;
+  background-image: url("photos2/bg_pacman_dot.png");
+  background-position-y: 10px;
+}
+
+.pacman .im1 {
+  position: relative;
+  z-index: 2;
+  top: -56%;
+  left: -1.5%;
+} 
+
+.pacman .im2 {
+  position: relative;
+  z-index: 2;
+  top: -33%;
+  right: 0;
+  left: 48%;
+}
+
+.pacman .container1 {
+  position: relative;
+  margin-top: 40px;
+  width: 1000px;
+  height: 408px;
+  border-radius: 30px;
+  border: 15px solid #ffe300;
+  background-color: #221f1f;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.pacman .card {
+  width: 343px;
+  height: 343px;
+  transform-style: preserve-3d;
+  animation: rotateCard 8s linear infinite;
+}
+
+.ghosts .card {
+  width: 230px;
+  height: 230px;
+  transform-style: preserve-3d;
+  animation: rotateCard 8s linear infinite;
+}
+
+.card-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-face-front {
+  transform: rotateY(0deg);
+}
+
+.card-face-back {
+  transform: rotateY(180deg);
+}
+
+.card-face img {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes rotateCard {
+  0% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  75% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+.pacman .info h2{
+  color: #ffe300;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+
+.pacman .info p{
+  color: white;
+  font-size: 20px;
+  line-height: 180%;
+
+}
+
+.ghosts .ghostscont [data-category="inky"] {
+  border-color: #5db8e9;
+}
+
+.ghosts .ghostscont [data-category="pinky"] {
+  border-color: #f2a4ba;
+}
+
+.ghosts .ghostscont [data-category="blinky"] {
+  border-color: #e41a12;
+}
+
+.ghosts .ghostscont [data-category="clyde"] {
+  border-color: #f4811f;
+}
+
+.ghosts .container2[data-category="blinky"] .info h2 {
+  color: #e41a12;
+  font-size: 40px;
+  padding-bottom: 15px;
+}
+
+.ghosts .container2[data-category="inky"] .info h2 {
+  color: #5db8e9;
+  font-size: 40px;
+  padding-bottom: 15px;
+}
+
+
+.ghosts .container2[data-category="clyde"] .info h2 {
+  color: #f4811f;
+  font-size: 40px;
+  padding-bottom: 15px;
+}
+
+
+.ghosts .container2[data-category="pinky"] .info h2 {
+  color: #f2a4ba;
+  font-size: 40px;
+  padding-bottom: 15px;
+}
+
+
+.ghosts {
+  position: absolute;
+  z-index: -1;
+  top: 146%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2000px;
+  background-image:url("photos2/bg_ghosts_pc.png") ,  url("photos2/bg_ghosts_dot.png") ;
+  background-size: contain , auto;
+  background-repeat: no-repeat , repeat;
+}
+
+.ghosts h1 {
+  margin-top: -1800px;
+  font-size: 50px;
+  font-weight: 400;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+}
+
+.ghosts .ghostscont {
+  position: absolute;
+  width: 100%;
+  height: 1400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:-200px;
+}
+
+.ghosts .container2 {
+  position: relative;
+  margin-top: 40px;
+  padding-bottom: 40px;
+  width: 1000px;
+  height: 310px;
+  border-radius: 30px;
+  border: 10px solid ;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ghosts .ghostscont .info p {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  line-height: 180%;
+}
+
+.ghosts .im1 {
+  position: relative;
+  z-index: 2;
+  top: -94.5%;
+  right: -27%;
+} 
+
+.ghosts .im2 {
+  position: relative;
+  z-index: 2;
+  top: -56%;
+}
+
+.ghosts .im3 {
+  position: relative;
+  z-index: 2;
+  top: -38%;
+  right: -27%;
+}
+
+.ghosts .im4 {
+  position: relative;
+  z-index: 2;
+  top: -19.5%;
+  right: 27%;
+}
+
+.pacdots {
+  margin-top: -160px;
+  width: 1000px;
+  height: auto;
+  padding-top: 35px;
+  padding-bottom: 50px;
+  border: 3px solid #ffe300;
+  border-radius: 20px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.pacdots .fdiv {
+  display: flex;
+  padding-left: 45px;
+}
+
+.pacdots .fdiv img {
+  scale: 0.7;
+  padding-left: 5px;
+  object-fit: contain;
+}
+
+.pacdots .fdiv p{
+  font-size: larger;
+}
+
+.pacdots .sdiv {
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pacdots .sdiv img {
+  object-fit: contain;
+  padding-right: 10px;
+}
+
+.pacdots .sdiv .pd {
+  scale: 0.7;
+}
+
+.pacdots .sdiv p{
+  font-weight: 200;
+  font-size: large;
+  line-height: normal;
+  word-spacing: 3px;
+}
+
+.footer {
+  position: absolute;
+  margin-top: 2550px;
+  width: 100%;
+  background-color: #ffe300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .stft {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.footer .stft p{
+  padding: 30px;
+  font-size: small;
+  color: #000;
+}
+
+.footer .ndft {
+  background-color: white;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer .ndft .footerl {
+  padding-top: 20px;
+  width: 600px; /*note the font*/
+  display:flex ;
+  align-items: center;
+  justify-content: space-around;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer .ndft .footerl li a {
+  font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI";
+  font-size: 11px;
+  color: #333;
+}
+
+.footer .ndft .footerl li a:hover{
+  color: #a5120d;
+  text-decoration: underline;
+}
+
+.ndft img{
+  scale: 0.8;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.ndft p {
+  color: #333;
+  font-size: 11px;
+  padding-bottom: 8px;
+  font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Segoe UI";
+}
