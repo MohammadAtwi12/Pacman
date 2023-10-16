@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pacman</title>
+</head>
+
+<body style="margin: 0; background-color: black;">
+    <canvas id="canvas" width="500" height="500">
+        <audio id="eatsound" src="sounds\eat1.mp3"></audio>
+    </canvas>
+    <div id="game-over" style="display: none;">
+        <h1>GAME OVER</h1>
+        <p id="final-score">Final Score: 0</p>
+        <button id="restart-button">Restart</button>
+    </div>
+    <div style="display:none;">
+        <img id="animation" src="animations.gif" width="140" height="20">
+        <img id="ghosts" src="ghost.png" width="140" height="20">
+        <img src="weakghost.png"  id="weakGhost" width="20" height="20">
+    </div>
+    <audio id="restartAudio">
+        <source src="sounds/game_start.wav" type="audio/mpeg">
+      </audio>
+    
+    <script src="audio.js"></script>
+    <script src="ghost.js"></script>
+    <script src="pacman.js"></script>
+    <script src="game.js"></script>
+</body>
+
+</html>
